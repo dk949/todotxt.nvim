@@ -99,9 +99,8 @@ function todotxt.open_task_pane()
     })
   end
 
-  local confutils = require("todotxt-nvim.config.util")
   state.split:mount()
-  state.split:set_tasks(confutils.map(state.store:get_tasks(), config.options.taskDisplayHook))
+  state.split:set_tasks(state.store:get_tasks())
   state.store:subscribe(state.split)
 
   local map_options = { noremap = true, nowait = true }

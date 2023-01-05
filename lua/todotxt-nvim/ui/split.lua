@@ -99,9 +99,10 @@ function Split:init(opts)
 end
 
 function Split:set_tasks(tasks)
+  local t = require("todotxt-nvim.config.util").mapTasks(tasks)
   self._extra.tree = NuiTree({
     winid = self.winid,
-    nodes = new_node_tree(tasks),
+    nodes = new_node_tree(t),
     prepare_node = prepare_node,
   })
   self._extra.tree:render()

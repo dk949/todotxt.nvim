@@ -8,4 +8,9 @@ function util.map(t, fn)
   return mapped
 end
 
+function util.mapTasks(tasks)
+  local config = require("todotxt-nvim.config")
+  return util.map(tasks, config.options.taskDisplayHook)
+end
+
 return util
