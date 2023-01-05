@@ -82,6 +82,7 @@ config.options = {
       winhighlight = "Normal:Normal",
     },
   },
+  taskDisplayHook = function(t)  return t end,
 }
 
 function config.set_options(opts)

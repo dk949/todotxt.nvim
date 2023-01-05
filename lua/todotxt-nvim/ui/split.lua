@@ -10,7 +10,9 @@ local function new_node_tree(tasks)
   local nodes = {}
 
   for _, t in pairs(tasks) do
-    table.insert(nodes, Node.TaskNode(t))
+    if t then -- Allows passing nil to skip a task
+        table.insert(nodes, Node.TaskNode(t))
+    end
   end
 
   table.sort(nodes, function(t1, t2)

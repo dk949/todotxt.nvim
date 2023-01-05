@@ -138,6 +138,10 @@ EOF
     complete_task = "<space>",
     edit_task = "ee",
   },
+  -- Function called on each task as they are drawn in the side bar
+  -- Can return the same task as was passed to it, or modify it
+  -- Return `nil` to skip the task
+  taskDisplayHook = function(t)  return t end,
 }
 ```
 
